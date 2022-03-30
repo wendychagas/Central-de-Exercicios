@@ -1,0 +1,338 @@
+algoritmo "Central"
+var
+   respMenuInicial, respCont: Caracter
+
+funcao FuncaoFatorial(V: Inteiro): Inteiro
+var
+   R, C: Inteiro
+inicio
+      R <- 1
+      para C <- 1 ate V faca
+           R <- R * C
+      fimpara
+      retorne R
+fimfuncao
+
+
+procedimento MenuInicial()
+inicio
+      limpatela
+      escreval("===========================")
+      escreval("   CENTRAL de EXERCICIOS   ")
+      escreval("===========================")
+      escreval()
+      escreval("|1| Contador Inteligente")
+      escreval("|2| Sequencia de Fibonacci")
+      escreval("|3| Cálculo do Fatorial")
+      escreval("|4| Matrizes")
+      escreval("|5| Finalizar")
+      escreval()
+      escreva("Decisão: ")
+      leia(respMenuInicial)
+      escolha respMenuInicial
+
+      caso "1"
+         ContadorInteligente()
+         
+      caso "2"
+         Fibonacci()
+         
+      caso "3"
+         Fatorial()
+
+      caso "4"
+           MenuMatrizes()
+
+      caso "5"
+           FinalizarSystem()
+      fimescolha
+fimprocedimento
+
+
+procedimento ContadorInteligente()
+var
+   contInicial, contFinal, contSalto: Inteiro
+inicio
+      repita
+      limpatela
+      escreval("--------------------------")
+      escreval("   CONTADOR INTELIGENTE   ")
+      escreval("--------------------------")
+      escreva("Inicial: ")
+      leia(contInicial)
+      escreva("Final: ")
+      leia(contFinal)
+      escreva("Salto: ")
+      leia(contSalto)
+           se (contInicial < contFinal) entao
+              limpatela
+              escreval("----------------------")
+              escreval(" Contagem Progressiva ")
+              escreval("----------------------")
+              escreval()
+              enquanto (contInicial <= contFinal) faca
+                 escreva(contInicial)
+                 contInicial <- contInicial + contSalto
+              fimenquanto
+           senao
+                limpatela
+                escreval("----------------------")
+                escreval("  Contagem Regressiva ")
+                escreval("----------------------")
+                escreval()
+                enquanto (contInicial > contFinal) faca
+                   escreva(contInicial)
+                   contInicial <- contInicial - contSalto
+                fimenquanto
+           fimse
+           escreval()
+           escreval("-------------------------")
+           escreva("Continuar Contador? |S|N|: ")
+           leia(respCont)
+         ate(respCont = "N")
+         MenuInicial()
+fimprocedimento
+
+
+procedimento Fibonacci()
+var
+   t1, t2, t3, tamSeq, contFib: Inteiro
+inicio
+      repita
+           limpatela
+           escreval("--------------------------")
+           escreval("  SEQUENCIA de FIBONACCI  ")
+           escreval("--------------------------")
+           escreval()
+           escreva("Informe o tamanho da sequencia |Max45|: ")
+           leia(tamSeq)
+           escreval()
+           t1 <- 0
+           escreval(t1)
+           t2 <- 1
+           escreval(t2)
+           para contFib <- 3 ate tamSeq faca
+                t3 <- t1 + t2
+                escreval(t3)
+                t1 <- t2
+                t2 <- t3
+           fimpara
+           escreval()
+           escreval("---------------------------")
+           escreva("Continuar Fibonacci? |S|N|: ")
+           leia(respCont)
+         ate(respCont = "N")
+         MenuInicial()
+fimprocedimento
+
+
+procedimento Fatorial()
+var
+   nFat, rFat: Inteiro
+inicio
+      repita
+           limpatela
+           escreval("--------------------------")
+           escreval("         FATORIAL         ")
+           escreval("--------------------------")
+           escreva("Informe o número do fatorial: ")
+           leia(nFat)
+           escreval()
+           rFat <- FuncaoFatorial(nFat)
+           escreval("O fatorial de", nFat, "! =", rFat)
+           escreval("--------------------------")
+           escreva("Continuar Fatorando? |S|N|: ")
+           leia(respCont)
+         ate(respCont = "N")
+         MenuInicial()
+fimprocedimento
+
+
+procedimento Matrizes()
+var
+   i, j: Inteiro
+   matId: vetor[1..4, 1..4] de Inteiro
+inicio
+      limpatela
+      escreval("--------------------------")
+      escreval("         MATRIZES         ")
+      escreval("--------------------------")
+      escreval()
+      escreval("     Preencher Matriz     ")
+      escreval()
+      para i <- 1 ate 4 faca
+          para j <- 1 ate 4 faca
+               escreva("Valores [", i, ",", j, " ]: ")
+               leia(matId[i,j])
+          fimpara
+      fimpara
+      escreval("")
+      MenuMatrizes()
+fimprocedimento
+
+procedimento MenuMatrizes()
+var
+   respMenuMat, i, j: Inteiro
+   matId: vetor[1..4, 1..4] de Inteiro
+inicio
+   repita
+      limpatela
+      escreval("=============================")
+      escreval("      Menu Opções Matriz     ")
+      escreval("=============================")
+      escreval("[1] Exibir Matriz Completa")
+      escreval("[2] Exibir Diagonal Principal")
+      escreval("[3] Exibir Triângulo Superior")
+      escreval("[4] Exibir Triângulo Inferior")
+      escreval("[5] Escolher Valores")
+      escreval("[6] Voltar ao Menu Matrizes")
+      escreval()
+      escreval(".............................")
+      escreva("Escolha uma opção: ")
+      leia(respMenuMat)
+      escreval()
+      escolha respMenuMat
+
+      caso 1
+           para i <- 1 ate 4 faca
+                para j <- 1 ate 4 faca
+                     escreva(matId[i,j]:4)
+                fimpara
+                escreval()
+           fimpara
+
+      caso 2
+           para i <- 1 ate 4 faca
+               para j <- 1 ate 4 faca
+                    se (i = j) entao
+                       escreva(matId[i,j]:4)
+                    senao
+                         escreva("  ")
+                    fimse
+               fimpara
+               escreval()
+           fimpara
+           escreval("")
+
+      caso 3
+           para i <- 1 ate 4 faca
+               para j <- 1 ate 4 faca
+                    se (i = 2) e (j = 1) entao
+                       escreva("    ")
+                    fimse
+                    se (i = 3) e (j = 1) entao
+                       escreva("    ")
+                    fimse
+                    se (i = 4) e (j = 1) entao
+                       escreva("    ")
+                    fimse
+                    se (i = 3) e (j = 2) entao
+                       escreva("    ")
+                    fimse
+                    se (i = 4) e (j = 2) entao
+                       escreva("    ")
+                    fimse
+                    se (i = 4) e (j = 3) entao
+                       escreva("    ")
+                    fimse
+                    se (i = j) entao
+                       escreva("   ")
+                    fimse
+                    se (i = 1) e (j = 2) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 1) e (j = 3) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 1) e (j = 4) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 2) e (j = 3) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 2) e (j = 4) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 3) e (j = 4) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+               fimpara
+               escreval()
+           fimpara
+           escreval("")
+
+      caso 4
+           para i <- 1 ate 4 faca
+               para j <- 1 ate 4 faca
+               se (i = 2) e (j = 1) entao
+                  escreva(matId[i,j]:4)
+               fimse
+               se (i = 3) e (j = 1) entao
+                  escreva(matId[i,j]:4)
+               fimse
+               se (i = 4) e (j = 1)  entao
+                  escreva(matId[i,j]:4)
+               fimse
+               se (i = 3) e (j = 2) entao
+                  escreva(matId[i,j]:4)
+               fimse
+               se (i = 4) e (j = 2) entao
+                  escreva(matId[i,j]:4)
+               fimse
+               se (i = 4) e (j = 3) entao
+                  escreva(matId[i,j]:4)
+               fimse
+               se (i = j) entao
+                  escreva(" ")
+               fimse
+               se (i = 1) e (j = 2) entao
+                  escreva(" ")
+               fimse
+               se (i = 1) e (j = 3) entao
+                  escreva(" ")
+               fimse
+               se (i = 1) e (j = 4) entao
+                  escreva(" ")
+               fimse
+               se (i = 2) e (j = 3) entao
+                  escreva(" ")
+               fimse
+               se (i = 2) e (j = 4) entao
+                  escreva(" ")
+               fimse
+               se (i = 3) e (j = 4) entao
+                  escreva(" ")
+               fimse
+               fimpara
+               escreval()
+           fimpara
+           escreva("")
+
+      caso 5
+           Matrizes()
+           
+      caso 6
+           MenuMatrizes()
+      fimescolha
+      escreval()
+      escreval("--------------------------")
+      escreva("Continuar Matrizes? |S|N|: ")
+      leia(respCont)
+      limpatela
+   ate(respCont = "N")
+   MenuInicial()
+fimprocedimento
+
+
+procedimento FinalizarSystem()
+inicio
+      limpatela
+      escreval("===========================")
+      escreval("ENCERRANDO SISTEMA...      ")
+      escreval("===========================")
+fimprocedimento
+
+
+inicio
+MenuInicial()
+fimalgoritmo
