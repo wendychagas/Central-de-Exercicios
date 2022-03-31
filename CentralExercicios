@@ -1,7 +1,10 @@
 algoritmo "Central"
+//Misturando tudo que aprendi no cursos de Algorirmos
+//Wendy, 2022
 var
    respMenuInicial, respCont: Caracter
 
+//Execução do cálculo Fatorial
 funcao FuncaoFatorial(V: Inteiro): Inteiro
 var
    R, C: Inteiro
@@ -14,6 +17,7 @@ inicio
 fimfuncao
 
 
+//Menu de opções principais
 procedimento MenuInicial()
 inicio
       limpatela
@@ -33,10 +37,10 @@ inicio
 
       caso "1"
          ContadorInteligente()
-         
+
       caso "2"
          Fibonacci()
-         
+
       caso "3"
          Fatorial()
 
@@ -49,6 +53,7 @@ inicio
 fimprocedimento
 
 
+//Processo de execução das contagens
 procedimento ContadorInteligente()
 var
    contInicial, contFinal, contSalto: Inteiro
@@ -94,6 +99,7 @@ inicio
 fimprocedimento
 
 
+//Cálculo do Fibonacci
 procedimento Fibonacci()
 var
    t1, t2, t3, tamSeq, contFib: Inteiro
@@ -126,6 +132,7 @@ inicio
 fimprocedimento
 
 
+//Cálculo do Fatorial
 procedimento Fatorial()
 var
    nFat, rFat: Inteiro
@@ -147,7 +154,7 @@ inicio
          MenuInicial()
 fimprocedimento
 
-
+//Aqui onde o usuário escolhe os próprios valores na matriz
 procedimento Matrizes()
 var
    i, j: Inteiro
@@ -170,12 +177,18 @@ inicio
       MenuMatrizes()
 fimprocedimento
 
+//Menu Principal da Matriz
 procedimento MenuMatrizes()
 var
    respMenuMat, i, j: Inteiro
-   matId: vetor[1..4, 1..4] de Inteiro
+   matId: vetor[1..4, 1..4] de Caracter
 inicio
    repita
+      para i <- 1 ate 4 faca
+          para j <- 1 ate 4 faca
+               matId[i,j] <- " * "
+          fimpara
+      fimpara
       limpatela
       escreval("=============================")
       escreval("      Menu Opções Matriz     ")
@@ -184,15 +197,17 @@ inicio
       escreval("[2] Exibir Diagonal Principal")
       escreval("[3] Exibir Triângulo Superior")
       escreval("[4] Exibir Triângulo Inferior")
-      escreval("[5] Escolher Valores")
-      escreval("[6] Voltar ao Menu Matrizes")
+      escreval("[5] Diagonal Contrária")
+      escreval("[6] Defina seus valores")
+      escreval("[7] Voltar")
       escreval()
       escreval(".............................")
       escreva("Escolha uma opção: ")
       leia(respMenuMat)
       escreval()
       escolha respMenuMat
-
+      
+      //Matriz Completa
       caso 1
            para i <- 1 ate 4 faca
                 para j <- 1 ate 4 faca
@@ -200,7 +215,8 @@ inicio
                 fimpara
                 escreval()
            fimpara
-
+           
+      //Diagonal Principal
       caso 2
            para i <- 1 ate 4 faca
                para j <- 1 ate 4 faca
@@ -213,7 +229,8 @@ inicio
                escreval()
            fimpara
            escreval("")
-
+           
+      //Trinângulo Superior
       caso 3
            para i <- 1 ate 4 faca
                para j <- 1 ate 4 faca
@@ -260,7 +277,8 @@ inicio
                escreval()
            fimpara
            escreval("")
-
+           
+      //Triângulo Inferior
       caso 4
            para i <- 1 ate 4 faca
                para j <- 1 ate 4 faca
@@ -308,11 +326,65 @@ inicio
            fimpara
            escreva("")
 
+      //Diagonal Contrária
       caso 5
-           Matrizes()
+           para i <- 1 ate 4 faca
+               para j <- 1 ate 4 faca
+                    se (i = 1) e (j = 3) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 2) e (j = 2) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 3) e (j = 1) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 1) e (j = 2) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 2) e (j = 1) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 1) e (j = 1) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 2) e (j = 4) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 3) e (j = 3) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 4) e (j = 2) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 3) e (j = 4) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 4) e (j = 3) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 4) e (j = 3) entao
+                       escreva("  ")
+                    fimse
+                    se (i = 1) e (j = 4) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 2) e (j = 3) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 3) e (j = 2) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 4) e (j = 1) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+               fimpara
+               escreval()
+           fimpara
            
+      //Escolher Valores
       caso 6
-           MenuMatrizes()
+           escreval("Em construção...")
       fimescolha
       escreval()
       escreval("--------------------------")
@@ -324,6 +396,7 @@ inicio
 fimprocedimento
 
 
+//Interface fechamento
 procedimento FinalizarSystem()
 inicio
       limpatela
@@ -333,6 +406,7 @@ inicio
 fimprocedimento
 
 
+//Programa Compilado em Procedimentos
 inicio
 MenuInicial()
 fimalgoritmo
