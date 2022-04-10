@@ -29,7 +29,9 @@ inicio
       escreval("|2| Sequencia de Fibonacci")
       escreval("|3| Cálculo do Fatorial")
       escreval("|4| Matrizes")
-      escreval("|5| Finalizar")
+      escreval("|5| Ordenar Vetores Crescente")
+      escreval()
+      escreval("|x| Finalizar")
       escreval()
       escreva("Decisão: ")
       leia(respMenuInicial)
@@ -48,6 +50,8 @@ inicio
            MenuMatrizes()
 
       caso "5"
+           OrdemVetores()
+      outrocaso
            FinalizarSystem()
       fimescolha
 fimprocedimento
@@ -395,6 +399,46 @@ inicio
    MenuInicial()
 fimprocedimento
 
+procedimento OrdemVetores()
+var
+   respOv: Caracter
+   ordemVet: vetor[1..12] de Inteiro
+   i, j, aux: Inteiro
+inicio
+   repita
+      limpatela
+      escreval()
+      escreval("---------------------------")
+      escreval("Ordenando Vetores Crescente")
+      escreval("---------------------------")
+      para i <- 1 ate 12 faca
+           escreva(i, "º valor: ")
+           leia(ordemVet[i])
+      fimpara
+      escreval()
+      
+      para i <- 1 ate 11 faca
+           para j <- i + 1 ate 12 faca
+                se (ordemVet[i] > ordemVet[j]) entao
+                   aux <- ordemVet[i]
+                   ordemVet[i] <- ordemVet[j]
+                   ordemVet[j] <- aux
+                fimse
+           fimpara
+      fimpara
+      
+      escreval("------------------------")
+      para i <- 1 ate 12 faca
+           escreva("{", ordemVet[i], " }")
+      fimpara
+      
+      escreval()
+      escreval("------------------------")
+      escreva("Continuar? |S|N|: ")
+      leia(respOv)
+   ate(respOv = "N")
+   MenuInicial()
+fimprocedimento
 
 //Interface fechamento
 procedimento FinalizarSystem()
