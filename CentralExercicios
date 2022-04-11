@@ -388,7 +388,8 @@ inicio
            
       //Escolher Valores
       caso 6
-           escreval("Em construção...")
+           PersonalizarMatriz()
+
       fimescolha
       escreval()
       escreval("--------------------------")
@@ -440,6 +441,169 @@ inicio
    MenuInicial()
 fimprocedimento
 
+procedimento PersonalizarMatriz()
+var
+   resp: Caracter
+   respM: Inteiro
+   i, j: Inteiro
+   matId: vetor[1..4, 1..4] de Inteiro
+inicio
+   repita
+      limpatela
+      escreval("--------------------------")
+      escreval("   Escolha seus valores   ")
+      escreval("--------------------------")
+      escreval()
+      escreval("     Preencher Matriz     ")
+      escreval()
+      para i <- 1 ate 4 faca
+          para j <- 1 ate 4 faca
+               escreva("Valores [", i, ",", j, " ]: ")
+               leia(matId[i,j])
+          fimpara
+      fimpara
+      escreval("")
+
+      limpatela
+      escreval("=============================")
+      escreval(" MENU  OPÇÕES PERSONALIZADAS ")
+      escreval("=============================")
+      escreval("|1| Exibir Matriz Inteira")
+      escreval("|2| Exibir Diagonal Principal")
+      escreval("|3| Exibir Triângulo Superior")
+      escreval("|4| Exibir Triângulo Inferior")
+      escreval("|5| Voltar")
+      escreval("----------------------")
+      escreva("Decisão: ")
+      leia(respM)
+      escolha respM
+      caso 1
+           escreval("=======================")
+           escreval("    MATRIZ COMPLETA    ")
+           escreval("=======================")
+           para i <- 1 ate 4 faca
+               para j <- 1 ate 4 faca
+                    escreva(matId[i,j]:4)
+               fimpara
+               escreval()
+           fimpara
+
+      caso 2
+            escreval("=======================")
+            escreval("  DIAGONAL PRINCIPAL   ")
+            escreval("=======================")
+            para i <- 1 ate 4 faca
+                para j <- 1 ate 4 faca
+                     se (i = j) entao
+                        escreva(matId[i, j]:4)
+                     fimse
+                     escreva("   ")
+                fimpara
+                escreval()
+            fimpara
+
+      caso 3
+           escreval("=======================")
+           escreval("  TRIÂNGULO SUPERIOR   ")
+           escreval("=======================")
+           para i <- 1 ate 4 faca
+                para j <- 1 ate 4 faca
+                     se (i = 2) e (j = 1) entao
+                        escreva("    ")
+                     fimse
+                     se (i = 3) e (j = 2) entao
+                        escreva("    ")
+                     fimse
+                     se (i = 4) e (j = 3) entao
+                        escreva("    ")
+                     fimse
+                     se (i = 3) e (j = 1) entao
+                        escreva("    ")
+                     fimse
+                     se (i = 4) e (j = 2) entao
+                        escreva("    ")
+                     fimse
+                     se (i = 4) e (j = 1) entao
+                        escreva("    ")
+                     fimse
+                     se (i = 1) e (j = 4) entao
+                        escreva(matId[i, j]:4)
+                     fimse
+                     se (i = 2) e (j = 4) entao
+                        escreva(matId[i,j]:4)
+                     fimse
+                     se (i= 1) e (j = 3) entao
+                        escreva(matId[i,j]:4)
+                     fimse
+                     se (i = 3) e (j = 4) entao
+                        escreva(matId[i,j]:4)
+                     fimse
+                     se (i = 2) e (j = 3) entao
+                        escreva(matId[i,j]:4)
+                     fimse
+                     se (i = 1) e (j = 1) entao
+                        escreva(matId[i,j]:4)
+                     fimse
+                fimpara
+                escreval()
+           fimpara
+
+      caso 4
+           escreval("=======================")
+           escreval("  TRIÂNGULO INFERIOR   ")
+           escreval("=======================")
+           para i <- 1 ate 4 faca
+               para j <- 1 ate 4 faca
+                    se (i = 1) e (j = 2) entao
+                       escreva(" ")
+                    fimse
+                    se (i = 2) e (j = 3) entao
+                       escreva(" ")
+                    fimse
+                    se (i = 3) e (j = 4) entao
+                       escreva(" ")
+                    fimse
+                    se (i = 1) e (j = 3) entao
+                       escreva(" ")
+                    fimse
+                    se (i = 2) e (j = 4) entao
+                       escreva(" ")
+                    fimse
+                    se (i = 1) e (j = 4) entao
+                       escreva(" ")
+                    fimse
+                    se (i = 2) e (j = 1) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 3) e (j = 2) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 4) e (j = 3) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 3) e (j = 1) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 4) e (j = 2) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+                    se (i = 4) e (j = 1) entao
+                       escreva(matId[i,j]:4)
+                    fimse
+               fimpara
+               escreval()
+           fimpara
+
+      caso 5
+           escreval()
+      fimescolha
+      escreval("======================")
+      escreva("Continuar? |S|N|: ")
+      leia(resp)
+   ate(resp = "N")
+   PersonalizarMatriz()
+fimprocedimento
+
 //Interface fechamento
 procedimento FinalizarSystem()
 inicio
@@ -448,6 +612,9 @@ inicio
       escreval("ENCERRANDO SISTEMA...      ")
       escreval("===========================")
 fimprocedimento
+
+
+
 
 
 //Programa Compilado em Procedimentos
