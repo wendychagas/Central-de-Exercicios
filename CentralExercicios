@@ -30,6 +30,7 @@ inicio
       escreval("|3| Cálculo do Fatorial")
       escreval("|4| Matrizes")
       escreval("|5| Ordenar Vetores Crescente")
+      escreval("|6| Strings Invertidas")
       escreval()
       escreval("|x| Finalizar")
       escreval()
@@ -51,6 +52,10 @@ inicio
 
       caso "5"
            OrdemVetores()
+           
+      caso "6"
+           StringsInvertidas()
+           
       outrocaso
            FinalizarSystem()
       fimescolha
@@ -75,9 +80,9 @@ inicio
       leia(contSalto)
            se (contInicial < contFinal) entao
               limpatela
-              escreval("----------------------")
-              escreval(" Contagem Progressiva ")
-              escreval("----------------------")
+              escreval("--------------------------")
+              escreval("   Contagem Progressiva   ")
+              escreval("--------------------------")
               escreval()
               enquanto (contInicial <= contFinal) faca
                  escreva(contInicial)
@@ -85,9 +90,9 @@ inicio
               fimenquanto
            senao
                 limpatela
-                escreval("----------------------")
-                escreval("  Contagem Regressiva ")
-                escreval("----------------------")
+                escreval("--------------------------")
+                escreval("    Contagem Regressiva   ")
+                escreval("--------------------------")
                 escreval()
                 enquanto (contInicial > contFinal) faca
                    escreva(contInicial)
@@ -95,7 +100,7 @@ inicio
                 fimenquanto
            fimse
            escreval()
-           escreval("-------------------------")
+           escreval("--------------------------")
            escreva("Continuar Contador? |S|N|: ")
            leia(respCont)
          ate(respCont = "N")
@@ -210,7 +215,7 @@ inicio
       leia(respMenuMat)
       escreval()
       escolha respMenuMat
-      
+
       //Matriz Completa
       caso 1
            para i <- 1 ate 4 faca
@@ -219,7 +224,7 @@ inicio
                 fimpara
                 escreval()
            fimpara
-           
+
       //Diagonal Principal
       caso 2
            para i <- 1 ate 4 faca
@@ -233,7 +238,7 @@ inicio
                escreval()
            fimpara
            escreval("")
-           
+
       //Trinângulo Superior
       caso 3
            para i <- 1 ate 4 faca
@@ -281,7 +286,7 @@ inicio
                escreval()
            fimpara
            escreval("")
-           
+
       //Triângulo Inferior
       caso 4
            para i <- 1 ate 4 faca
@@ -385,15 +390,15 @@ inicio
                fimpara
                escreval()
            fimpara
-           
+
       //Escolher Valores
       caso 6
            PersonalizarMatriz()
 
       fimescolha
       escreval()
-      escreval("--------------------------")
-      escreva("Continuar Matrizes? |S|N|: ")
+      escreval("----------------------------")
+      escreva("Continuar Matrizes? |S|N|:   ")
       leia(respCont)
       limpatela
    ate(respCont = "N")
@@ -417,7 +422,7 @@ inicio
            leia(ordemVet[i])
       fimpara
       escreval()
-      
+
       para i <- 1 ate 11 faca
            para j <- i + 1 ate 12 faca
                 se (ordemVet[i] > ordemVet[j]) entao
@@ -427,12 +432,12 @@ inicio
                 fimse
            fimpara
       fimpara
-      
+
       escreval("------------------------")
       para i <- 1 ate 12 faca
            escreva("{", ordemVet[i], " }")
       fimpara
-      
+
       escreval()
       escreval("------------------------")
       escreva("Continuar? |S|N|: ")
@@ -478,9 +483,9 @@ inicio
       leia(respM)
       escolha respM
       caso 1
-           escreval("=======================")
-           escreval("    MATRIZ COMPLETA    ")
-           escreval("=======================")
+           escreval("===========================")
+           escreval("      MATRIZ COMPLETA      ")
+           escreval("===========================")
            para i <- 1 ate 4 faca
                para j <- 1 ate 4 faca
                     escreva(matId[i,j]:4)
@@ -489,9 +494,9 @@ inicio
            fimpara
 
       caso 2
-            escreval("=======================")
-            escreval("  DIAGONAL PRINCIPAL   ")
-            escreval("=======================")
+            escreval("===========================")
+            escreval("    DIAGONAL PRINCIPAL     ")
+            escreval("===========================")
             para i <- 1 ate 4 faca
                 para j <- 1 ate 4 faca
                      se (i = j) entao
@@ -503,9 +508,9 @@ inicio
             fimpara
 
       caso 3
-           escreval("=======================")
-           escreval("  TRIÂNGULO SUPERIOR   ")
-           escreval("=======================")
+           escreval("===========================")
+           escreval("    TRIÂNGULO SUPERIOR     ")
+           escreval("===========================")
            para i <- 1 ate 4 faca
                 para j <- 1 ate 4 faca
                      se (i = 2) e (j = 1) entao
@@ -549,9 +554,9 @@ inicio
            fimpara
 
       caso 4
-           escreval("=======================")
-           escreval("  TRIÂNGULO INFERIOR   ")
-           escreval("=======================")
+           escreval("===========================")
+           escreval("    TRIÂNGULO INFERIOR     ")
+           escreval("===========================")
            para i <- 1 ate 4 faca
                para j <- 1 ate 4 faca
                     se (i = 1) e (j = 2) entao
@@ -597,11 +602,37 @@ inicio
       caso 5
            escreval()
       fimescolha
-      escreval("======================")
+      escreval("--------------------------")
       escreva("Continuar? |S|N|: ")
       leia(resp)
    ate(resp = "N")
    PersonalizarMatriz()
+fimprocedimento
+
+procedimento StringsInvertidas()
+var
+   contInversor: Inteiro
+   stringInversor, respInversor: Caracter
+inicio
+      limpatela
+      escreval("--------------------------")
+      escreval("    Inversão de Strings   ")
+      escreval("--------------------------")
+      escreval()
+      escreva("String -> ")
+      leia(stringInversor)
+      escreval()
+      escreval("--------------------------")
+      contInversor <- Compr(stringInversor)
+      enquanto (contInversor >= 1) faca
+         escreva(Copia(stringInversor, contInversor, 1))
+         contInversor <- contInversor - 1
+      fimenquanto
+      escreval()
+      escreval("--------------------------")
+      escreva("Continuar? |S|N|: ")
+      leia(respInversor)
+      MenuInicial()
 fimprocedimento
 
 //Interface fechamento
@@ -612,10 +643,6 @@ inicio
       escreval("ENCERRANDO SISTEMA...      ")
       escreval("===========================")
 fimprocedimento
-
-
-
-
 
 //Programa Compilado em Procedimentos
 inicio
