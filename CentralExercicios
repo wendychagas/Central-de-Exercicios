@@ -31,6 +31,7 @@ inicio
       escreval("|4| Matrizes")
       escreval("|5| Ordenar Vetores Crescente")
       escreval("|6| Strings Invertidas")
+      escreval("|7| Pesquisar/Localizar Vetor")
       escreval()
       escreval("|x| Finalizar")
       escreval()
@@ -55,6 +56,9 @@ inicio
            
       caso "6"
            StringsInvertidas()
+
+      caso "7"
+           PesquisarVetor()
            
       outrocaso
            FinalizarSystem()
@@ -633,6 +637,55 @@ inicio
       escreva("Continuar? |S|N|: ")
       leia(respInversor)
       MenuInicial()
+fimprocedimento
+
+procedimento PesquisarVetor()
+var
+   listaVetor: vetor[1..10] de Caracter
+   i: Inteiro
+   respPesquisa, pesqNome, respFinal: Caracter
+   acha: Logico
+inicio
+      limpatela
+      escreval()
+      escreval("--------------------------")
+      escreval("   Informar & Pesquisar   ")
+      escreval("--------------------------")
+      para i <- 1 ate 10 faca
+           escreva("Informe o", i, "º nome: ")
+           leia(listaVetor[i])
+      fimpara
+      escreval()
+      escreval("--------------------------")
+      respPesquisa <- "S"
+      enquanto (respPesquisa = "S") faca
+         limpatela
+         escreval("--------------------------")
+         escreva("Localizar nome: ")
+         leia(pesqNome)
+         escreval("--------------------------")
+         i <- 1
+         acha <- falso
+         enquanto (i <= 10) e (acha = falso) faca
+            se (pesqNome = listaVetor[i]) entao
+               acha <- verdadeiro
+            senao
+                 i <- i + 1
+            fimse
+         fimenquanto
+         se (acha = verdadeiro) entao
+            escreva("[ ",pesqNome," ] foi encontrado na posição [", i, " ].")
+            escreval()
+         senao
+              escreva("[",pesqNome, " ] não foi encontrado.")
+              escreval()
+         fimse
+         escreval()
+         escreval("--------------------------")
+         escreva("Continuar? |S|N|: ")
+         leia(respPesquisa)
+      fimenquanto
+   MenuInicial()
 fimprocedimento
 
 //Interface fechamento
