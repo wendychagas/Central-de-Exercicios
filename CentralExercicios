@@ -195,11 +195,19 @@ procedimento MenuMatrizes()
 var
    respMenuMat, i, j: Inteiro
    matId: vetor[1..4, 1..4] de Caracter
+   sinalEscolha: Caracter
 inicio
    repita
+      escreval("--------------------------")
+      escreval("    Escolha o Caracter    ")
+      escreval("--------------------------")
+      escreval()
+      escreva("Escolha o caracter: ")
+      leia(sinalEscolha)
+      escreval()
       para i <- 1 ate 4 faca
           para j <- 1 ate 4 faca
-               matId[i,j] <- " * "
+               matId[i,j] <- sinalEscolha
           fimpara
       fimpara
       limpatela
