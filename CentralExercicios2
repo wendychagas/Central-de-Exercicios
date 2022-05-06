@@ -1,0 +1,256 @@
+algoritmo "CentralExercicios2"
+// Função :
+// Autor :
+// Data : 06/05/2022
+// Seção de Declarações
+var
+   respMenu: Caracter
+//Titulo
+procedimento TopoTitulo()
+inicio
+      escreval("===============================")
+      escreval("    -CENTRAL de EXERCICIOS-    ")
+      escreval("===============================")
+      escreval()
+fimprocedimento
+
+//Layout Fechamento
+procedimento Finalizar()
+inicio
+      limpatela
+      escreval("===========================")
+      escreval("       Encerrando...       ")
+      escreval("===========================")
+fimprocedimento
+
+//MenuPrincipal
+procedimento MenuPrincipal()
+inicio
+      limpatela
+      Topotitulo()
+      escreval("|1| Exercicio 1 - Tabuada")
+      escreval("|2| Exercicio 2 - Meses  ")
+      escreval("|3| Exercicio 3 - Calculadora")
+      escreval()
+      escreval("|x| Para encerrar o sistema.")
+      escreval("---------------------------")
+      escreva("Decida sua escolha: ")
+      leia(respMenu)
+      escolha respMenu
+      caso "1"
+           Exercicio1()
+      caso "2"
+           Exercicio2()
+      caso "3"
+           Exercicio3()
+      caso "x"
+           Finalizar()
+      outrocaso
+               escreval()
+               escreval("---------------------------")
+               escreval("* Opção inválida.")
+      fimescolha
+fimprocedimento
+
+//Menu Auxiliar
+procedimento MenuNavegar()
+var
+inicio
+      escreval()
+      escreval("===================")
+      escreval("  -MENU AUXILIAR-  ")
+      escreval("===================")
+      escreval("|1| Continuar")
+      escreval("|2| Menu Principal")
+      escreval()
+      escreval("|x| Finalizar")
+      escreval("-------------------")
+fimprocedimento
+
+//Exercicio1 - Tabuada
+procedimento Exercicio1()
+var
+   cont, n, r, t: Inteiro
+   resp, resp2: Caracter
+inicio
+      //Topo - Tabuada
+      limpatela
+      escreval("=====================")
+      escreval("Exercicio 1 - Tabuada")
+      escreval("=====================")
+      escreval()
+      
+      //Processo - Tabuada
+      cont <- 1
+      escreva("* Digite o tamanho da tabuada: ")
+      leia(t)
+      escreva("* Digite o número da tabuada: ")
+      leia(n)
+      escreval("---------------------------")
+      escreval()
+      enquanto (cont <= t) faca
+         r <- cont * n
+         escreval(cont, " x", n, " =", r)
+         cont <- cont + 1
+      fimenquanto
+      
+      //Processo - Menu Auxiliar
+      MenuNavegar()
+      escreva("* Decida sua escolha: ")
+      leia(resp2)
+      escolha resp2
+      caso "1"
+           Exercicio1()
+      caso "2"
+           MenuPrincipal()
+      caso "x"
+           Finalizar()
+      outrocaso
+               escreval()
+               escreval("-------------------")
+               escreval("* Opção inválida.")
+      fimescolha
+fimprocedimento
+
+//Exercicio2 - Meses
+procedimento Exercicio2()
+var
+   mes, resp, resp2: Caracter
+inicio
+
+      //Topo - Meses
+      limpatela
+      escreval("===================")
+      escreval("Exercicio 2 - Meses")
+      escreval("===================")
+      escreval()
+      escreval("* Digite o mês |1| à |12|")
+      escreval("---------------------------")
+      escreva("* Decida sua escolha: ")
+      leia(mes)
+      
+      //Processo - Meses
+      escolha mes
+      caso "1"
+           escreval()
+           escreval("| JANEIRO |")
+      caso "2"
+           escreval()
+           escreval("| FEVEREIRO |")
+      caso "3"
+           escreval()
+           escreval("| MARÇO |")
+      caso "4"
+           escreval()
+           escreval("| ABRIL |")
+      caso "5"
+           escreval()
+           escreval("| MAIO |")
+      caso "6"
+           escreval()
+           escreval("| JUNHO |")
+      caso "7"
+           escreval()
+           escreval("| JULHO |")
+      caso "8"
+           escreval()
+           escreval("| AGOSTO |")
+      caso "9"
+           escreval()
+           escreval("| SETEMBRO |")
+      caso "10
+           escreval()
+           escreval("| OUTUBRO |")
+      caso "11"
+           escreval()
+           escreval("| NOVEMBRO |")
+      caso "12"
+           escreval()
+           escreval("| DEZEMBRO |")
+      outrocaso
+               escreval()
+               escreval("-------------------')
+               escreval("Opção inválida.")
+      fimescolha
+      
+      //Processo  - enu Auxiliar 2
+      MenuNavegar()
+      escreva("* Decida sua escolha: ")
+      leia(resp2)
+      escolha resp2
+      caso "1"
+           Exercicio2()
+      caso "2"
+           MenuPrincipal()
+      caso "x"
+           Finalizar()
+      outrocaso
+               escreval()
+               escreval("-------------------")
+               escreval("* Opção inválida.")
+      fimescolha
+fimprocedimento
+
+//Exercicio3 - Calculadora
+procedimento Exercicio3
+var
+   v1, v2, r: Real
+   resp, resp2, op: Caracter
+inicio
+      //Topo - Calculadora
+      limpatela
+      escreval("=========================")
+      escreval("Exercicio 3 - Calculadora")
+      escreval("=========================")
+      escreval()
+      
+      //Processo - Calculadora
+      escreva("* Digite o 1º valor: ")
+      leia(v1)
+      escreva("* Digite a operação: ")
+      leia(op)
+      escreva("* Digite o 2º valor: ")
+      leia(v2)
+      escreval()
+      escreval("Resultado: ")
+      escreval()
+      escolha op
+      caso "+"
+           r <- v1 + v2
+           escreval(v1, " +", v2, " =", r)
+      caso "-"
+           r <- v1 - v2
+           escreval(v1, " -", v2, " =", r)
+      caso "*"
+           r <- v1 * v2
+           escreval(v1, " *", v2, " =", r)
+      caso "/"
+           r <- v1 / v2
+           escreval(v1, " /", v2, " =", r)
+      outrocaso
+               escreval("Operação inválida.')
+      fimescolha
+      
+      //Processo - Menu Auxiliar 2
+      MenuNavegar()
+      escreva("* Decida sua escolha: ")
+      leia(resp2)
+      escolha resp2
+      caso "1"
+           Exercicio3()
+      caso "2"
+           MenuPrincipal()
+      caso "x"
+           Finalizar()
+      outrocaso
+               escreval("-------------------")
+               escreval("* Opção inválida.")
+      fimescolha
+fimprocedimento
+
+
+// Seção de Comandos
+inicio
+TopoTitulo()
+MenuPrincipal()
+fimalgoritmo
