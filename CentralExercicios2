@@ -28,9 +28,13 @@ procedimento MenuPrincipal()
 inicio
       limpatela
       Topotitulo()
-      escreval("|1| Exercicio 1 - Tabuada")
-      escreval("|2| Exercicio 2 - Meses  ")
-      escreval("|3| Exercicio 3 - Calculadora")
+      escreval("|1| Exercicio 1 | Tabuada")
+      escreval("|2| Exercicio 2 | Meses  ")
+      escreval("|3| Exercicio 3 | Calculadora")
+      escreval("|4| Exercicio 4 | Comparador")
+      escreval("|5| Exercicio 5 | Analisador")
+      escreval("|6| Exercicio 6 | Somador")
+      escreval("|7| Exercicio 7 | Temperatura")
       escreval()
       escreval("|x| Para encerrar o sistema.")
       escreval("---------------------------")
@@ -43,6 +47,14 @@ inicio
            Exercicio2()
       caso "3"
            Exercicio3()
+      caso "4"
+           Exercicio4()
+      caso "5"
+           Exercicio5()
+      caso "6"
+           Exercicio6()
+      caso "7"
+           Exercicio7()
       caso "x"
            Finalizar()
       outrocaso
@@ -85,7 +97,7 @@ inicio
       escreva("* Digite o tamanho da tabuada: ")
       leia(t)
       escreva("* Digite o número da tabuada: ")
-      leia(n)
+
       escreval("---------------------------")
       escreval()
       enquanto (cont <= t) faca
@@ -173,7 +185,7 @@ inicio
                escreval("Opção inválida.")
       fimescolha
       
-      //Processo  - enu Auxiliar 2
+      //Processo  - Menu Auxiliar 2
       MenuNavegar()
       escreva("* Decida sua escolha: ")
       leia(resp2)
@@ -248,6 +260,216 @@ inicio
       fimescolha
 fimprocedimento
 
+//Exercicio 4 - Comparador
+procedimento Exercicio4()
+var
+   va, vb: Inteiro
+   resp2: Caracter
+inicio
+      //Topo - Comparador
+      limpatela
+      escreval("========================")
+      escreval("Exercicio 4 - Comparador")
+      escreval("========================")
+      escreval()
+      
+      escreva("Valor A: ")
+      leia(va)
+      escreva("Valor B: ")
+      leia(vb)
+      se (va = vb) entao
+         escreval()
+         escreval("A e B são iguais.")
+      fimse
+      se (va > vb) entao
+         escreval()
+         escreval("A é maior que B.")
+      fimse
+      se (va < vb) entao
+         escreval()
+         escreval("A é menor que B.")
+      fimse
+      
+      //Processo  - Menu Auxiliar 4
+      MenuNavegar()
+      escreva("* Decida sua escolha: ")
+      leia(resp2)
+      escolha resp2
+      caso "1"
+           Exercicio4()
+      caso "2"
+           MenuPrincipal()
+      caso "x"
+           Finalizar()
+      outrocaso
+               escreval()
+               escreval("-------------------")
+               escreval("* Opção inválida.")
+      fimescolha
+fimprocedimento
+
+procedimento Exercicio5()
+var
+   n: Inteiro
+   resp, resp2: Caracter
+inicio
+      //Topo - Analisador
+      limpatela
+      escreval("========================")
+      escreval("Exercicio 5 - Analisador")
+      escreval("========================")
+      escreval()
+      
+      //Processo - Analisador
+      escreva("Digite um número |+|-|: ")
+      leia(n)
+      escreval("---------------------------")
+      se (n >= 0) entao
+         se (n % 2 = 0) entao
+            escreval("O número", n, " é POSITIVO e PAR.")
+         senao
+              escreval("O número", n, " é POSITIVO e ÍMPAR.")
+         fimse
+      senao
+           se (n % 2 = 0) entao
+              escreval("O número", n, " é NEGATIVO e PAR.")
+           senao
+                escreval("O número", n, " é NEGATIVO e ÍMPAR.")
+           fimse
+      fimse
+      
+      //Processo  - Menu Auxiliar 5
+      MenuNavegar()
+      escreva("* Decida sua escolha: ")
+      leia(resp2)
+      escolha resp2
+      caso "1"
+           Exercicio5()
+      caso "2"
+           MenuPrincipal()
+      caso "x"
+           Finalizar()
+      outrocaso
+               escreval()
+               escreval("-------------------")
+               escreval("* Opção inválida.")
+      fimescolha
+fimprocedimento
+
+procedimento Exercicio6()
+var
+   cont, s, quant: Inteiro
+   resp2: Caracter
+inicio
+      //Topo - Somador
+      limpatela
+      escreval("=====================")
+      escreval("Exercicio 6 - Somador")
+      escreval("=====================")
+      escreval()
+      
+      //Processo - Somador
+      cont <- 1
+      s <- 0
+      escreva("* Digite a quantidade de somas: ")
+      leia(quant)
+      enquanto (cont <= quant) faca
+               s <- s + cont
+               cont <- cont + 1
+      fimenquanto
+      escreval()
+      escreval("* A soma dos números entre 1 e", quant, " =", s, ".")
+      
+      //Processo  - Menu Auxiliar 6
+      MenuNavegar()
+      escreva("* Decida sua escolha: ")
+      leia(resp2)
+      escolha resp2
+      caso "1"
+           Exercicio6()
+      caso "2"
+           MenuPrincipal()
+      caso "x"
+           Finalizar()
+      outrocaso
+               escreval()
+               escreval("-------------------")
+               escreval("* Opção inválida.")
+      fimescolha
+fimprocedimento
+
+procedimento Exercicio7()
+var
+   tempC, tempF, convC, convF: Real
+   resp2, respEscolha: Caracter
+inicio
+      //Topo - Temperatura
+      limpatela
+      escreval("=========================")
+      escreval("Exercicio 7 - Temperatura")
+      escreval("=========================")
+      escreval()
+      
+      //Processo - Temperatura
+      escreval("* Formato Atual")
+      escreval()
+      escreval("|1|  Celsius")
+      escreval("|2|  Fahrenheit")
+      escreval()
+      escreval("|x|  Finalizar")
+      escreval("---------------")
+      leia(respEscolha)
+      escolha respEscolha
+      caso "1"
+           limpatela
+           escreval("========================================")
+           escreval(" -Conversor de Celsius para Fahrenheit- ")
+           escreval("========================================")
+           escreval()
+           escreva("* Informe a temperatura em C°: ")
+           leia(tempC)
+
+           convF <- tempC * 1.8 + 32
+           escreval()
+           escreval(tempC, "C° = ", convF:3:1, "F°")
+
+      caso "2"
+           limpatela
+           escreval("========================================")
+           escreval(" -Conversor de Fahrenheit para Celsius -")
+           escreval("========================================")
+           escreval()
+           escreva("* Informe a temperatura em F°: ")
+           leia(tempF)
+
+           convC <- (5 * (tempF - 32) / 9)
+           escreval()
+           escreval(tempF, "F° = ", convC:3:1, "C°")
+      caso "x"
+           limpatela
+           Finalizar()
+      outrocaso
+               escreval("---------------")
+               escreval("Opção inválida.")
+      fimescolha
+      
+      //Processo  - Menu Auxiliar 7
+      MenuNavegar()
+      escreva("* Decida sua escolha: ")
+      leia(resp2)
+      escolha resp2
+      caso "1"
+           Exercicio7()
+      caso "2"
+           MenuPrincipal()
+      caso "x"
+           Finalizar()
+      outrocaso
+               escreval()
+               escreval("-------------------")
+               escreval("* Opção inválida.")
+      fimescolha
+fimprocedimento
 
 // Seção de Comandos
 inicio
