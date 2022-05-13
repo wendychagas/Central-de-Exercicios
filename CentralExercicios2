@@ -3,7 +3,7 @@ algoritmo "CentralExercicios2"
 // Wendy, 2022
 var
    c1, c2, c3: Inteiro // <-*nesta linha* Referente ao Exercicio-8
-   respMenu: Caracter
+   respMenu: Caracter  // <-*nesta linha* Global
 //Titulo
 procedimento TopoTitulo()
 inicio
@@ -185,7 +185,7 @@ inicio
            escreval("| DEZEMBRO |")
       outrocaso
                escreval()
-               escreval("-------------------')
+               escreval("-------------------")
                escreval("Opção inválida.")
       fimescolha
       
@@ -364,7 +364,7 @@ fimprocedimento
 //Exercicio 6 - Somador
 procedimento Exercicio6()
 var
-   cont, s, quant: Inteiro
+   cont, s, quant, contAux: Inteiro
    resp2: Caracter
 inicio
       //Topo - Somador
@@ -375,16 +375,18 @@ inicio
       escreval()
       
       //Processo - Somador
-      cont <- 1
       s <- 0
-      escreva("* Digite a quantidade de somas: ")
+      escreva("* Valor inicial do somador: ")
+      leia(cont)
+      contAux <- cont
+      escreva("* Valo final do somador: ")
       leia(quant)
       enquanto (cont <= quant) faca
                s <- s + cont
                cont <- cont + 1
       fimenquanto
       escreval()
-      escreval("* A soma dos números entre 1 e", quant, " =", s, ".")
+      escreval("* A soma dos números entre", contAux, " e", quant, " =", s, ".")
       
       //Processo  - Menu Auxiliar 6
       MenuNavegar()
