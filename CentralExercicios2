@@ -25,6 +25,9 @@ fimprocedimento
 //MenuPrincipal
 procedimento MenuPrincipal()
 inicio
+      c1 <- 0
+      c2 <- 0
+      c3 <- 0
       limpatela
       Topotitulo()
       escreval("|1| Exercicio 1 | Tabuada")
@@ -98,6 +101,8 @@ inicio
       cont <- 1
       escreva("* Digite o tamanho da tabuada: ")
       leia(t)
+      escreva("* Digite o valor da tabuada: ")
+      leia(n)
       escreval()
       enquanto (cont <= t) faca
          r <- cont * n
@@ -476,20 +481,18 @@ fimprocedimento
 //Exercicio 8 - Votação
 procedimento Exercicio8()
 var
-   quantE, i: Inteiro
+   quantE, totE, i: Inteiro
    escolherCand, resp2: Caracter
 inicio
       TopoAuxVotacao()
-      escreva("Quantidade de eleitores: ")
+      escreva("* Quantidade de eleitores: ")
       leia(quantE)
-      
       para i <- 1 ate quantE faca
            limpatela
            TopoAuxVotacao()
            ContadorVotos()
-           escreval()
            escreval("----------")
-           escreval("Candidatos")
+           escreval("* Candidatos")
            escreval()
            escreval("|1| Candidato A")
            escreval("|2| Candidato B")
@@ -508,14 +511,14 @@ inicio
            limpatela
            TopoAuxVotacao()
       fimpara
-      escreval()
-      escreval("Total de Eleitores: ", quantE)
+      totE <- c1 + c2 + c3
+      escreval("* Total de Eleitores: ", totE)
       escreval("--------------------")
       escreval()
-      escreval("Total votos Candidato A: ", c1)
-      escreval("Total votos Candidato B: ", c2)
-      escreval("Total votos Candidato C: ", c3)
-      
+      escreval("* Total de votos do Candidato A: ", c1)
+      escreval("* Total de votos do Candidato B: ", c2)
+      escreval("* Total de votos do Candidato C: ", c3)
+
       //Processo  - Menu Auxiliar 8
       MenuNavegar()
       escreva("* Decida sua escolha: ")
@@ -531,18 +534,18 @@ inicio
                escreval()
                escreval("-------------------")
                escreval("* Opção inválida.")
+      fimescolha
 fimprocedimento
 
 //Processo para exibir votos simultaneamente após votar
 procedimento ContadorVotos()
 inicio
-      escreval()
       escreval("-----------")
-      escreval("Contagem dos Votos")
+      escreval("* Contagem dos Votos")
       escreval()
-      escreval("Candidato A: ", c1)
-      escreval("Candidato B: ", c2)
-      escreval("Candidato C: ", c3)
+      escreval("* Candidato A: ", c1)
+      escreval("* Candidato B: ", c2)
+      escreval("* Candidato C: ", c3)
       escreval()
 fimprocedimento
 
