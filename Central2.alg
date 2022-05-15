@@ -2,9 +2,11 @@ algoritmo "CentralExercicios2"
 // Central De Exercicios 2.0
 // Wendy, 2022
 var
-   c1, c2, c3, votoN: Inteiro // <-*nesta linha* Referente ao Exercicio-8
-   respMenu: Caracter  // <-*nesta linha* Global
+   c1, c2, c3, votoN: Inteiro
+   respMenu: Caracter
+   
 //Titulo
+//------------------------------------------------------------------------------
 procedimento TopoTitulo()
 inicio
       escreval("===============================")
@@ -12,8 +14,10 @@ inicio
       escreval("===============================")
       escreval()
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Layout Fechamento
+//------------------------------------------------------------------------------
 procedimento Finalizar()
 inicio
       limpatela
@@ -21,8 +25,10 @@ inicio
       escreval("       Encerrando...       ")
       escreval("===========================")
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //MenuPrincipal
+//------------------------------------------------------------------------------
 procedimento MenuPrincipal()
 inicio
       c1 <- 0
@@ -37,7 +43,7 @@ inicio
       escreval("|5| Exercicio 5 | Analisador")
       escreval("|6| Exercicio 6 | Somador")
       escreval("|7| Exercicio 7 | Temperatura")
-      escreval("|8| Exercicio 8 | VotaÁ„o")
+      escreval("|8| Exercicio 8 | Vota√ß√£o")
       escreval()
       escreval("|x| Para encerrar o sistema.")
       escreval("---------------------------")
@@ -65,11 +71,13 @@ inicio
       outrocaso
                escreval()
                escreval("---------------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Menu Auxiliar
+//------------------------------------------------------------------------------
 procedimento MenuNavegar()
 var
 inicio
@@ -83,8 +91,10 @@ inicio
       escreval("|x| Finalizar")
       escreval("-------------------")
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Exercicio1 - Tabuada
+//------------------------------------------------------------------------------
 procedimento Exercicio1()
 var
    cont, n, r, t: Inteiro
@@ -124,11 +134,13 @@ inicio
       outrocaso
                escreval()
                escreval("-------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Exercicio2 - Meses
+//------------------------------------------------------------------------------
 procedimento Exercicio2()
 var
    mes, resp, resp2: Caracter
@@ -140,7 +152,7 @@ inicio
       escreval("Exercicio 2 - Meses")
       escreval("===================")
       escreval()
-      escreval("* Digite o mÍs |1| ‡ |12|")
+      escreval("* Digite o m√™s |1| √† |12|")
       escreval("---------------------------")
       escreva("* Decida sua escolha: ")
       leia(mes)
@@ -155,7 +167,7 @@ inicio
            escreval("| FEVEREIRO |")
       caso "3"
            escreval()
-           escreval("| MAR«O |")
+           escreval("| MAR√áO |")
       caso "4"
            escreval()
            escreval("| ABRIL |")
@@ -186,7 +198,7 @@ inicio
       outrocaso
                escreval()
                escreval("-------------------")
-               escreval("OpÁ„o inv·lida.")
+               escreval("Op√ß√£o inv√°lida.")
       fimescolha
 
       //Processo  - Menu Auxiliar 2
@@ -203,11 +215,13 @@ inicio
       outrocaso
                escreval()
                escreval("-------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Exercicio3 - Calculadora
+//------------------------------------------------------------------------------
 procedimento Exercicio3
 var
    v1, v2, r: Real
@@ -221,11 +235,11 @@ inicio
       escreval()
 
       //Processo - Calculadora
-      escreva("* Digite o 1∫ valor: ")
+      escreva("* Digite o 1¬∫ valor: ")
       leia(v1)
-      escreva("* Digite a operaÁ„o: ")
+      escreva("* Digite a opera√ß√£o: ")
       leia(op)
-      escreva("* Digite o 2∫ valor: ")
+      escreva("* Digite o 2¬∫ valor: ")
       leia(v2)
       escreval()
       escreval("Resultado: ")
@@ -244,7 +258,7 @@ inicio
            r <- v1 / v2
            escreval(v1, " /", v2, " =", r)
       outrocaso
-               escreval("OperaÁ„o inv·lida.')
+               escreval("Opera√ß√£o inv√°lida.')
       fimescolha
 
       //Processo - Menu Auxiliar 2
@@ -260,11 +274,13 @@ inicio
            Finalizar()
       outrocaso
                escreval("-------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Exercicio 4 - Comparador
+//------------------------------------------------------------------------------
 procedimento Exercicio4()
 var
    va, vb: Inteiro
@@ -283,15 +299,15 @@ inicio
       leia(vb)
       se (va = vb) entao
          escreval()
-         escreval("A e B s„o iguais.")
+         escreval("A e B s√£o iguais.")
       fimse
       se (va > vb) entao
          escreval()
-         escreval("A È maior que B.")
+         escreval("A √© maior que B.")
       fimse
       se (va < vb) entao
          escreval()
-         escreval("A È menor que B.")
+         escreval("A √© menor que B.")
       fimse
 
       //Processo  - Menu Auxiliar 4
@@ -308,11 +324,13 @@ inicio
       outrocaso
                escreval()
                escreval("-------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Exercicio 5 - Analisador
+//------------------------------------------------------------------------------
 procedimento Exercicio5()
 var
    n: Inteiro
@@ -326,20 +344,20 @@ inicio
       escreval()
 
       //Processo - Analisador
-      escreva("Digite um n˙mero |+|-|: ")
+      escreva("Digite um n√∫mero |+|-|: ")
       leia(n)
       escreval("---------------------------")
       se (n >= 0) entao
          se (n % 2 = 0) entao
-            escreval("O n˙mero", n, " È POSITIVO e PAR.")
+            escreval("O n√∫mero", n, " √© POSITIVO e PAR.")
          senao
-              escreval("O n˙mero", n, " È POSITIVO e ÕMPAR.")
+              escreval("O n√∫mero", n, " √© POSITIVO e √çMPAR.")
          fimse
       senao
            se (n % 2 = 0) entao
-              escreval("O n˙mero", n, " È NEGATIVO e PAR.")
+              escreval("O n√∫mero", n, " √© NEGATIVO e PAR.")
            senao
-                escreval("O n˙mero", n, " È NEGATIVO e ÕMPAR.")
+                escreval("O n√∫mero", n, " √© NEGATIVO e √çMPAR.")
            fimse
       fimse
 
@@ -357,11 +375,13 @@ inicio
       outrocaso
                escreval()
                escreval("-------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Exercicio 6 - Somador
+//------------------------------------------------------------------------------
 procedimento Exercicio6()
 var
    cont, s, quant, contAux: Inteiro
@@ -386,7 +406,7 @@ inicio
                cont <- cont + 1
       fimenquanto
       escreval()
-      escreval("* A soma dos n˙meros entre", contAux, " e", quant, " =", s, ".")
+      escreval("* A soma dos n√∫meros entre", contAux, " e", quant, " =", s, ".")
 
       //Processo  - Menu Auxiliar 6
       MenuNavegar()
@@ -402,11 +422,13 @@ inicio
       outrocaso
                escreval()
                escreval("-------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
 //Exercicio 7 - Temperatura
+//------------------------------------------------------------------------------
 procedimento Exercicio7()
 var
    tempC, tempF, convC, convF: Real
@@ -435,12 +457,12 @@ inicio
            escreval(" -Conversor de Celsius para Fahrenheit- ")
            escreval("========================================")
            escreval()
-           escreva("* Informe a temperatura em C∞: ")
+           escreva("* Informe a temperatura em C¬∞: ")
            leia(tempC)
 
            convF <- tempC * 1.8 + 32
            escreval()
-           escreval(tempC, "C∞ = ", convF:3:1, "F∞")
+           escreval(tempC, "C¬∞ = ", convF:3:1, "F¬∞")
 
       caso "2"
            limpatela
@@ -448,18 +470,18 @@ inicio
            escreval(" -Conversor de Fahrenheit para Celsius -")
            escreval("========================================")
            escreval()
-           escreva("* Informe a temperatura em F∞: ")
+           escreva("* Informe a temperatura em F¬∞: ")
            leia(tempF)
 
            convC <- (5 * (tempF - 32) / 9)
            escreval()
-           escreval(tempF, "F∞ = ", convC:3:1, "C∞")
+           escreval(tempF, "F¬∞ = ", convC:3:1, "C¬∞")
       caso "x"
            limpatela
            Finalizar()
       outrocaso
                escreval("---------------")
-               escreval("OpÁ„o inv·lida.")
+               escreval("Op√ß√£o inv√°lida.")
       fimescolha
 
       //Processo  - Menu Auxiliar 7
@@ -476,11 +498,13 @@ inicio
       outrocaso
                escreval()
                escreval("-------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
-//Exercicio 8 - VotaÁ„o
+//Exercicio 8 - Vota√ß√£o
+//------------------------------------------------------------------------------
 procedimento Exercicio8()
 var
    quantE, totE, i: Inteiro
@@ -538,11 +562,13 @@ inicio
       outrocaso
                escreval()
                escreval("-------------------")
-               escreval("* OpÁ„o inv·lida.")
+               escreval("* Op√ß√£o inv√°lida.")
       fimescolha
 fimprocedimento
+//------------------------------------------------------------------------------
 
-//Processo para exibir votos simultaneamente apÛs votar
+//Processo para exibir votos simultaneamente ap√≥s votar
+//------------------------------------------------------------------------------
 procedimento ContadorVotos()
 inicio
       escreval("-----------")
@@ -554,18 +580,22 @@ inicio
       escreval("* Nulos:       ", votoN)
       escreval()
 fimprocedimento
+//------------------------------------------------------------------------------
 
-//Topo Auxiliar para Exercicio 8 - VotaÁ„o
+//Topo Auxiliar para Exercicio 8 - Vota√ß√£o
+//------------------------------------------------------------------------------
 procedimento TopoAuxVotacao()
 inicio
       limpatela
       escreval("=====================")
-      escreval("Exercicio 8 - VotaÁ„o")
+      escreval("Exercicio 8 - Vota√ß√£o")
       escreval("=====================")
       escreval()
 fimprocedimento
+//------------------------------------------------------------------------------
 
-// SeÁ„o de Comandos
+// Se√ß√£o de Comandos
+//------------------------------------------------------------------------------
 inicio
 TopoTitulo()
 MenuPrincipal()
