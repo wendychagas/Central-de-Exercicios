@@ -1,2 +1,2 @@
 # centralExercicios
-Conjunto de pequenas soluções em um só lugar para práticar lógica e algoritmos.
+Conjunto de pequenas soluções em um só lugar para praticar e estudar lógica de programação e algoritmos.
