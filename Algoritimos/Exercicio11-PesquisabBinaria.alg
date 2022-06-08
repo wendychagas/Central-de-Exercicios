@@ -1,9 +1,9 @@
-algoritmo "Pesquisa Bin·ria"
+algoritmo "Pesquisa Bin√°ria"
 //--------------------------------------------------------------
 procedimento Topo()
 inicio
       escreval("=================================")
-      escreval(" Exercicio 11 - Pesquisa Bin·ria ")
+      escreval(" Exercicio 11 - Pesquisa Bin√°ria ")
       escreval("=================================")
       escreval()
 fimprocedimento
@@ -22,7 +22,7 @@ inicio
            leia(vetNome[i])
       fimpara
       
-      //OrdenaÁ„o;
+      //Ordena√ß√£o;
       para i <- 1 ate 9 faca
           para j <- i + 1 ate 10 faca
                se (vetNome[i] > vetNome[j]) entao
@@ -33,7 +33,7 @@ inicio
           fimpara
       fimpara
       
-      //Exibir OrdenaÁ„o;
+      //Exibir Ordena√ß√£o;
       para i <- 1 ate 10 faca
            escreval(vetNome[i])
       fimpara
@@ -61,10 +61,10 @@ inicio
          fimenquanto
          se (acha = verdadeiro) entao
             escreval()
-            escreval("* ", pesq, " foi localizado na posiÁ„o ", meio, ".")
+            escreval("* ", pesq, " foi localizado na posi√ß√£o ", meio, ".")
          senao
               escreval()
-              escreval("* ", pesq, " n„o foi localizado.")
+              escreval("* ", pesq, " n√£o foi localizado.")
          fimse
          escreval()
          escreval("___________________")
