@@ -1,4 +1,4 @@
-algoritmo "PesquisaSequencial"
+algoritmo "Pesquisa Sequencial"
 //---------------------------------------------------
 procedimento Topo()
 inicio
@@ -18,7 +18,7 @@ fimprocedimento
 procedimento pesquisaSequencial()
 inicio
       para i <- 1 ate 10 faca
-           escreva("->", i, "∫ Nome: ")
+           escreva("->", i, "¬∫ Nome: ")
            leia(vetNome[i])
       fimpara
       
@@ -40,10 +40,10 @@ inicio
          fimenquanto
          se (acha = verdadeiro) entao
             escreval()
-            escreval("-> | ", pesq, " | foi encontrado na posiÁ„o |", i, " |.")
+            escreval("-> | ", pesq, " | foi encontrado na posi√ß√£o |", i, " |.")
          senao
               escreval()
-              escreval("-> |", pesq, "| n„o foi encontrado.")
+              escreval("-> |", pesq, "| n√£o foi encontrado.")
          fimse
          escreval("_________________")
          escreva("Continuar? |s|n|: ")
